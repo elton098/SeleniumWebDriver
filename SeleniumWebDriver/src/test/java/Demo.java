@@ -7,11 +7,17 @@ import org.junit.Test;
 public class Demo {
 
     @Test
-    public void RunDemo() throws InterruptedException {
+    public void RunDemo() {
 
         // launch Firefox and direct it to the Base URL
 
 
 
     }
-}
+
+    public class DemoTwo {
+
+        @Test
+        public void RunDemoTwo() {
+
+}}}
