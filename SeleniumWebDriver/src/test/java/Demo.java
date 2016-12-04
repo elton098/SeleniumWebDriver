@@ -28,7 +28,6 @@ public class Demo {
     @Test
     public void RunDemo3() throws InterruptedException {
 
-        // launch Firefox and direct it to the Base URL
 
 
 
