@@ -8,7 +8,7 @@ public class Demo {
     @Test
     public void RunDemo() throws InterruptedException {
 
-        // launch Firefox and direct it to the Base URL
+        // launch Firefox and direct it to the Base
 
 
 
