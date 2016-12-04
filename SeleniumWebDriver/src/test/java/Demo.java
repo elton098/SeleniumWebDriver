@@ -6,19 +6,16 @@ import org.junit.Test;
 public class Demo {
 
     @Test
-    public void RunDemo() throws InterruptedException {
+    public void RunDemoKyle1()  {
 
-        // launch Firefox and direct it to the Base
+        int lenght = 30;
+        int width = 5;
+
+        System.out.println("The area is "+ lenght*width);
 
 
 
-    }
 
-
-    @Test
-    public void RunDemo2() throws InterruptedException {
-
-        // launch Firefox and direct it to the Base URL
 
 
 
@@ -26,12 +23,19 @@ public class Demo {
 
 
     @Test
-    public void RunDemo3() throws InterruptedException {
+    public void RunDemoKyle2() {
+
+        int[] testAverage = new int[]{80, 90, 95, 77, 60,};
+        int accum = 0;
+        for (int i = 0; i < testAverage.length; i++) {
+
+            accum += testAverage[i];
+        }
+        System.out.println("The average is " + accum/testAverage.length);}}
 
 
 
 
-    }
 
 
-}
+
