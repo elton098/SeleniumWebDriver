@@ -1,20 +1,20 @@
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by E on 12/4/2016.
  */
-public class Demo {
+public class Demo extends Driver {
 
     @Test
     public void RunDemo() throws InterruptedException {
 
-        System.setProperty("webdriver.firefox.marionette","C:\\drivers\\geckodriver.exe");
             // launch Firefox and direct it to the Base
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://www.gmail.com");
-
+        driver.get("http://www.google.com");
+        driver.findElement(By.id("lst-ib")).sendKeys("Elton Eze");
+        driver.findElement(By.id("lst-ib")).submit();
 
     }
 
