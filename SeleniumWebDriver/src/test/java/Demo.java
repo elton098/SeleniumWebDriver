@@ -1,12 +1,11 @@
+import Drivers.SelDriver;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by E on 12/4/2016.
  */
-public class Demo extends Driver {
+public class Demo extends SelDriver {
 
     @Test
     public void RunDemo() throws InterruptedException {

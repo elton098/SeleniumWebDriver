@@ -1,3 +1,5 @@
+package Drivers;
+
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by E on 12/4/2016.
  */
-public class Driver {
+public class SelDriver {
 
 
     protected static WebDriver driver;
@@ -16,6 +18,7 @@ public class Driver {
         System.setProperty("webdriver.firefox.marionette","C:\\drivers\\geckodriver.exe");
         // launch Firefox and direct it to the Base
         driver = new FirefoxDriver();
+
     }
 
 
