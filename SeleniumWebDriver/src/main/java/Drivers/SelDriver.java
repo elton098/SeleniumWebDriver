@@ -18,6 +18,7 @@ public class SelDriver {
         System.setProperty("webdriver.firefox.marionette","C:\\drivers\\geckodriver.exe");
         // launch Firefox and direct it to the Base
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
 
     }
 
