@@ -19,16 +19,6 @@ public class Demo extends SelDriver {
 
 
     @Test
-    public void RunDemo2() throws InterruptedException {
-
-        // launch Firefox and direct it to the Base URL
-
-
-
-    }
-
-
-    @Test
     public void RunDemo3() throws InterruptedException {
 
         // launch Firefox and direct it to the Base URL
