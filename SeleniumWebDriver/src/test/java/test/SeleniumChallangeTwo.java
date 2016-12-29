@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import util.Wait;
 
 import java.net.URL;
 import java.util.List;
@@ -30,6 +31,7 @@ public class SeleniumChallangeTwo extends SelDriver {
 
         // driver is instructed to go to target website
         driver.get("http://www.poppin.com");
+        Wait.sleep(1000);
         // removes popup that loads when window opens (sometimes it will not be found 25% chance
         driver.findElement(By.className("ltkmodal-close")).click();
         //list of WebElements that contain the buttons

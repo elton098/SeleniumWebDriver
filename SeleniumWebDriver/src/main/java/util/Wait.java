@@ -9,7 +9,7 @@ public class Wait extends SelDriver {
 
 
     //Wait for specified amount of seconds
-    public static void wait(int milliseconds){
+    public static void sleep(int milliseconds){
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
