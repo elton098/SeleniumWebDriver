@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import util.Wait;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
@@ -72,5 +74,19 @@ public class ActionsDemo_Test extends SelDriver{
                 .moveByOffset(120, 0)
                 .release()
                 .perform();
+    }
+
+
+    @Test
+    public void selectFromDropdown(){
+        driver.get("https://calculator-rates.com/lending/home-refinance/?sourceId=lmb-home-lending&moid=113627");
+        Wait.sleep(5000);
+        Select typeOfLoan = new Select(driver.findElement(By.id("loanType")));
+        typeOfLoan.selectByIndex(2);
+        Wait.sleep(1500);
+        Select typeOfLoan2 = new Select(driver.findElement(By.id("propertyDescription")));
+        typeOfLoan2.selectByVisibleText("Manufactured Home");
+        Wait.sleep(5000);
+
     }
     }
