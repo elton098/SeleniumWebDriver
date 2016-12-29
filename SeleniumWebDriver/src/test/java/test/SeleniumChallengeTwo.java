@@ -22,7 +22,8 @@ import static junit.framework.TestCase.assertTrue;
 /**
  * Created by Kyle Alex on 12/27/2016.
  */
-public class SeleniumChallangeTwo extends SelDriver {
+public class SeleniumChallengeTwo extends SelDriver {
+
 
 
     @Test
@@ -31,9 +32,9 @@ public class SeleniumChallangeTwo extends SelDriver {
 
         // driver is instructed to go to target website
         driver.get("http://www.poppin.com");
-        Wait.sleep(1000);
+
         // removes popup that loads when window opens (sometimes it will not be found 25% chance
-        driver.findElement(By.className("ltkmodal-close")).click();
+        driver.findElement(By.cssSelector(".ltkmodal-close")).click();
         //list of WebElements that contain the buttons
         List<WebElement> buttonColorCheck = driver.findElements(By.className("header-swatch"));
         //calls index zero which is for white products and clicks the link
@@ -105,13 +106,30 @@ public class SeleniumChallangeTwo extends SelDriver {
         driver.navigate().back();
 
 
+    }
+    @Test
+    //Test to verify that the color bar int he  hompage goes ti the correct landing page
+    public void verifyColorOnHomepage(){
+        driver.get("http://www.poppin.com");
+        Wait.sleep(15000);
 
+        //close pop modal
+        if( driver.findElement(By.xpath(".//*[@id='close-button']/a")).isDisplayed()){
+            driver.findElement(By.xpath(".//*[@id='close-button']/a")).click();
+        }
 
+        Wait.sleep(4000);
+        //click on clors and verify page
+        String [] colors ={"white","yellow","blue", "red"};
+        List <WebElement> colorBars = driver.findElements(By.cssSelector(".header-swatch"));
 
-
-
-
+        for(int i =0; i<colorBars.size();i++){
+           driver.findElement(By.linkText(" view "+colors[i]+" products ")).click();
+            Wait.sleep(5000);
+            assertEquals("http://www.poppin.com/color/"+colors[i]+"/",driver.getCurrentUrl());
+            driver.navigate().back();
+            Wait.sleep(5000);
+        }
 
     }
-
 }
