@@ -3,6 +3,7 @@ import Drivers.SelDriver;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 
 
@@ -10,6 +11,8 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import util.Wait;
 
+
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -109,27 +112,35 @@ public class SeleniumChallengeTwo extends SelDriver {
     }
     @Test
     //Test to verify that the color bar int he  hompage goes ti the correct landing page
-    public void verifyColorOnHomepage(){
+    public void verifyColorOnHomepage() {
         driver.get("http://www.poppin.com");
         Wait.sleep(15000);
 
         //close pop modal
-        if( driver.findElement(By.xpath(".//*[@id='close-button']/a")).isDisplayed()){
+        if (driver.findElement(By.xpath(".//*[@id='close-button']/a")).isDisplayed()) {
             driver.findElement(By.xpath(".//*[@id='close-button']/a")).click();
         }
 
         Wait.sleep(4000);
         //click on clors and verify page
-        String [] colors ={"white","yellow","blue", "red"};
-        List <WebElement> colorBars = driver.findElements(By.cssSelector(".header-swatch"));
+        String[] colors = {"white", "yellow", "blue", "red"};
+        List<WebElement> colorBars = driver.findElements(By.cssSelector(".header-swatch"));
 
-        for(int i =0; i<colorBars.size();i++){
-           driver.findElement(By.linkText(" view "+colors[i]+" products ")).click();
+        for (int i = 0; i < colorBars.size(); i++) {
+            driver.findElement(By.linkText(" view " + colors[i] + " products ")).click();
             Wait.sleep(5000);
-            assertEquals("http://www.poppin.com/color/"+colors[i]+"/",driver.getCurrentUrl());
+            assertEquals("http://www.poppin.com/color/" + colors[i] + "/", driver.getCurrentUrl());
             driver.navigate().back();
             Wait.sleep(5000);
         }
-
     }
-}
+
+    @Test
+    public void TakesScreenShotExample(){
+
+            //driver.get("http://www.packtpub.com/");
+           // File scrFile = ((TakeScreenShot)driver).getScreenshotAs(OutputType.FILE);
+          //  System.out.println(scrFile.getAbsolutePath());
+        }
+    }
+
