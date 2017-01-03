@@ -33,7 +33,7 @@ public class SeleniumChallengeTwo extends SelDriver {
     //Test to verify that the color bar int he  hompage goes ti the correct landing page
     public void verifyColorOnHomepage() {
         driver.get("http://www.poppin.com");
-        Wait.sleep(2000);
+        Wait.sleep(9000);
 
         //close pop modal
         if (driver.findElement(By.xpath(".//*[@id='close-button']/a")).isDisplayed()) {
@@ -50,10 +50,9 @@ public class SeleniumChallengeTwo extends SelDriver {
 
         for (int i = 0; i < colorLinks.length; i++) {
             driver.findElement(By.linkText("view " + colors[i] + " products")).click();
-            Wait.sleep(2000);
+            Wait.sleep(2500);
             assertEquals("http://www.poppin.com/color/" + colorLinks[i] + "/", driver.getCurrentUrl());
-            driver.navigate().back();
-            Wait.sleep(2000);
+            Wait.sleep(2500);
         }
     }}
 
