@@ -1,3 +1,5 @@
+package test;
+
 import Drivers.SelDriver;
 import org.junit.Test;
 import org.openqa.selenium.By;

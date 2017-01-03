@@ -46,7 +46,7 @@ public class SeleniumChallengeTwo extends SelDriver {
         "pool blue", "navy", "purple", "black", "dark gray", "light gray", "metallic"};
         String[] colorLinks = {"white", "yellow", "orange", "red", "pink", "lime-green", "aqua",
                 "pool-blue", "navy", "purple", "black", "dark-gray", "light-gray", "metallic"};
-        List<WebElement> colorBars = driver.findElements(By.cssSelector(".header-swatch"));
+
 
         for (int i = 0; i < colorLinks.length; i++) {
             driver.findElement(By.linkText("view " + colors[i] + " products")).click();
