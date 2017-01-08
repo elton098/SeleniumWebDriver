@@ -3,7 +3,6 @@ package util;
 import Drivers.SelDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,12 +23,11 @@ public class Wait extends SelDriver {
 
 
     public static void waitForCssSelector(WebDriver driver, String css){
-        WebDriverWait wait = new WebDriverWait(driver,30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));
-    }
+        WebDriverWait wait = new WebDriverWait(driver,3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(css)));}
 
 
-    public static void waitForID(WebDriver driver, String id){
+        public static void waitForID(WebDriver driver, String id){
         WebDriverWait wait = new WebDriverWait(driver,30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
 
@@ -70,4 +68,5 @@ public class Wait extends SelDriver {
         WebDriverWait wait = new WebDriverWait(driver,30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName(tagName)));
     }
+
 }

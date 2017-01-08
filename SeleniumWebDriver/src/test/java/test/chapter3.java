@@ -52,13 +52,12 @@ public class chapter3 extends SelDriver {
     @Test
     public void alertDemo() {
         driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
-        Wait.waitForCssSelector(driver,"#content>p>button");
+        Wait.waitForCssSelector(driver,".cp-info-bar-msg.cp_responsive>span");
         driver.findElement(By.cssSelector(".ib-img-default")).click();
-        List<WebElement> alerts = driver.findElements(By.cssSelector("#content>p>button"));
-        alerts.get(2).click();
-        Wait.sleep(1500);
+        driver.findElement(By.cssSelector("#content>p>button")).click();
         driver.switchTo().alert().accept();
-        Wait.sleep(5000);
+
+
     }
 
     @Test
@@ -66,7 +65,13 @@ public class chapter3 extends SelDriver {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
     }
+    @Test
+    public void TakesScreenShotExample(){
 
+        //driver.get("http://www.packtpub.com/");
+        // File scrFile = ((TakeScreenShot)driver).getScreenshotAs(OutputType.FILE);
+        //  System.out.println(scrFile.getAbsolutePath());
+    }
 }
 
 
