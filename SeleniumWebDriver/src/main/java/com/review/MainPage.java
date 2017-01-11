@@ -27,6 +27,9 @@ public class MainPage extends SelDriver{
        Wait.waitForCssSelector(driver,".panel.panel-default");
    }
 
+
+
+
     }
 
 
