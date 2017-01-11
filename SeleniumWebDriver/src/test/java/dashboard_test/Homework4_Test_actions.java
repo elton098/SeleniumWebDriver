@@ -55,7 +55,7 @@ public class Homework4_Test_actions extends SelDriver {
 
 @Test
 public void testSlider() {
-
+ //Test slider actions for setting values within projected score via input
     driver.get("http://www.princetonreview.com");
     MainPage.signIn("sirkibble1988@gmail.com", "Blastingrod");
     StudentTools.launchDashboard("SAT");
@@ -63,6 +63,7 @@ public void testSlider() {
     assertTrue
             (HomePage.setScoreValueInBox("#TargetScores_Subjects_1__Score", "250")
                     .equalsIgnoreCase("250"));
+    //sets math slider to max
     assertTrue
             (HomePage.setSliderValueToMax
                     ("#TargetScores_Subjects_0__Score").equalsIgnoreCase("800"));
