@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Switch_Windows extends SelDriver {
 
 
-
+       //switches windows
     public static void windowSwitch( int windowIndex) {
         driver.switchTo().defaultContent();
 
