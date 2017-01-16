@@ -14,7 +14,7 @@ public class StudentTools extends SelDriver{
           MainPage.clickStudentTools();
         if (TestType.equals("SAT")){
             driver.findElement(By.cssSelector(".btn.btn-sm.btn-primary")).click();
-            Wait.waitForCssSelector(driver, ".h2.target-scores-header.btn-link");
+            Wait.waitForElementViability(By.cssSelector(".h2.target-scores-header.btn-link"),5);
             Wait.sleep(2000);
         }}}
 

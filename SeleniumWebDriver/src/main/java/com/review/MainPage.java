@@ -10,9 +10,9 @@ public class MainPage extends SelDriver{
     public static void signIn(String user, String password){
 
             driver.findElement(By.id("signInItem")).click();
-            Wait.waitForCssSelector(driver,"#actionModal");
+            Wait.waitForElementViability(By.cssSelector("#actionModal"),5);
             driver.switchTo().frame("actionFrame");
-            Wait.waitForID(driver,"Username");
+            Wait.waitForElementViability(By.id("Username"),5);
             driver.findElement(By.id("Username")).sendKeys(user);
             driver.findElement(By.id("Password")).sendKeys(password);
             driver.findElement(By.cssSelector(".btn.btn-primary.btn-blue.btn-block")).click();
@@ -24,7 +24,7 @@ public class MainPage extends SelDriver{
 
    public static void clickStudentTools(){
        driver.findElement(By.id("studentToolsItemHref")).click();
-       Wait.waitForCssSelector(driver,".panel.panel-default");
+       Wait.waitForElementViability(By.cssSelector(".panel.panel-default"),5);
    }
 
 

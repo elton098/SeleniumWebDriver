@@ -52,7 +52,7 @@ public class chapter3 extends SelDriver {
     @Test
     public void alertDemo() {
         driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
-        Wait.waitForCssSelector(driver,".cp-info-bar-msg.cp_responsive>span");
+        Wait.waitForElementViability(By.cssSelector(".cp-info-bar-msg.cp_responsive>span"),5);
         driver.findElement(By.cssSelector(".ib-img-default")).click();
         driver.findElement(By.cssSelector("#content>p>button")).click();
         driver.switchTo().alert().accept();

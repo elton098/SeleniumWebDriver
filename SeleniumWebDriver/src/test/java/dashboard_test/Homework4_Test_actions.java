@@ -32,17 +32,17 @@ public class Homework4_Test_actions extends SelDriver {
     StudentTools.launchDashboard("SAT");
 
 
-//accepts xpath of date on calander and as well as the actual value of date.
+//accepts xpath of date on calender and as well as the actual value of date.
     assertTrue
             (((HomePage.getDates
                     (".//*[@id='testdate-form']/div/div/div[1]/table/tbody/tr[6]"
-                            + "/td[3]", "31"))).equalsIgnoreCase("01/31/2017"));
+                            + "/td[3]"))).equalsIgnoreCase("01/31/2017"));
 
 
 
 
     assertTrue(((HomePage.getDates
-            (".//*[@id='testdate-form']/div/div/div[1]/table/tbody/tr[5]/td[3]","24")))
+            (".//*[@id='testdate-form']/div/div/div[1]/table/tbody/tr[5]/td[3]")))
             .equalsIgnoreCase("01/24/2017"));
 
 
@@ -73,6 +73,8 @@ public void testSlider() {
 
 @Test
     public void schoolSelector() {
+    //Test adds both Harvard College and Yale University as desired schools
+    HomePage.SchoolSelector();
 
 
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.sql.Driver;
+import java.util.ArrayList;
 
 /**
  * Created by Kyle Alex on 1/8/2017.
@@ -14,120 +15,15 @@ public class Switch_Windows extends SelDriver {
 
 
 
-
-    public static void windowSwitchViaLinkText (WebDriver driver, String args){
-
-
-        String window1 = driver.getWindowHandle();
+    public static void windowSwitch( int windowIndex) {
+        driver.switchTo().defaultContent();
 
 
-        WebElement link = driver.findElement(By.linkText(args));
-                link.click();
-        Wait.sleep(4000);
-        String window2 = driver.getWindowHandle();
+        Object[] windows = driver.getWindowHandles().toArray();
+        ArrayList<String> windowSwitch = new ArrayList<String>();
 
-        //driver.switchTo().window(window2);
+        for (int i = 0; i < driver.getWindowHandles().size(); i++)
+            windowSwitch.add(windows[i].toString());
+        driver.switchTo().window(windowSwitch.get(windowIndex));
 
-
-
-
-
-
-    }
-
-
-
-
-    public static void windowSwitchViaCSS (String arg){
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.cssSelector(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();
-
-}
-
-    public static void windowSwitchViaID (String arg) {
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.id(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();
-    }
-
-
-    public static void windowSwitchViaXpath (String arg){
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.xpath(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();}
-
-
-    public static void windowSwitchViaClass (String arg){
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.className(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();
-    }
-
-    public static void windowSwitchViaPartialLinkText (String arg){
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.partialLinkText(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();
-    }
-
-
-
-    public static void windowSwitchViaTagName (String arg){
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.tagName(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();}
-
-    public static void windowSwitchViaName (String arg){
-
-
-        String window1 = driver.getWindowHandle();
-
-
-        WebElement link = driver.findElement(By.name(arg));
-        link.click();
-        String window2 = driver.getWindowHandle();
-    }
-    public static void windowSwitchviaIndex(WebDriver driver, WebElement driverIndex){
-
-        String window3 = driver.getWindowHandle();
-
-        driverIndex.click();
-
-        String window4 = driver.getWindowHandle();
-    }
-
-
-
-
-    }
-
+    }}
