@@ -35,16 +35,22 @@ public static String getDates(String xpathLink) {
 
 
     //method sets score for projected scores modo.
-    public static String setScoreValueInBox(String CssSelector, String sendValue){
+    public static String setScoreValueInBox(String subject, String sendValue){
         WebElement targetBox = driver.findElement(By.cssSelector
-                (CssSelector));
-
-        Actions sliderActions = new Actions(driver);
-        targetBox.clear();
-        sliderActions.moveToElement(targetBox).click().sendKeys(sendValue).perform();
+                ("#TargetScores_Subjects_1__Score"));
+      if(subject.equalsIgnoreCase("SAT_english")) {
 
 
+          targetBox.clear();
+          targetBox.sendKeys(sendValue);
+
+          return targetBox.getAttribute("Value");
+      }
+          else{
+
+          }
         return targetBox.getAttribute("Value");
+
     }
     //Method sets slider in modo to max value
     public static String setSliderValueToMax(String CssSelector) {
