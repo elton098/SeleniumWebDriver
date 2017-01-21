@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import util.Wait;
 
 import java.io.BufferedReader;
@@ -29,8 +30,16 @@ public class SelDriver extends Global {
         // launch Firefox and direct it to the Base
         //driver = new FirefoxDriver();
         driver = new ChromeDriver();
-        }else
-        {
+        }
+
+
+        else if(driverSelection.toUpperCase().equals("IE")){
+
+            System.setProperty("webdriver.ie.driver", "C:\\drivers\\IEDriverServer.exe");
+
+            driver = new InternetExplorerDriver();}
+        else {
+
             System.setProperty("webdriver.firefox.marionette","C:\\drivers\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
