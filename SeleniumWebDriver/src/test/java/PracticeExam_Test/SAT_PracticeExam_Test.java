@@ -27,7 +27,7 @@ public class SAT_PracticeExam_Test extends SelDriver {
         SAT_PracticeExam.setTestLength("in half");
         //method leaves test and examines score
         SAT_PracticeExam.exitExamAndDisplayScore();
-        //Method exists test post score PDF and test score filters
+        //Method exists test post score PDF anjd test score filters
         SAT_PracticeExam.testPostExamFunctions();
 
 

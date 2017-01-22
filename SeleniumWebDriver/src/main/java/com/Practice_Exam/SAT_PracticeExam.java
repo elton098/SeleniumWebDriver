@@ -88,7 +88,7 @@ public static void setTestLength(String time){
 
 
         option.selectByValue("20");
-        Wait.sleep(5000);
+        Wait.waitForElementViability(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button"),20);
         driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
         driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
         Wait.sleep(5000);
@@ -100,7 +100,7 @@ public static void setTestLength(String time){
 
 
         option.selectByValue("0");
-        Wait.sleep(5000);
+        Wait.waitForElementViability(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button"),20);
         driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
         driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
         Wait.sleep(5000);
@@ -110,7 +110,7 @@ public static void setTestLength(String time){
     else{
 
         option.selectByValue("0");
-        Wait.sleep(5000);
+        Wait.waitForElementViability(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button"),20);
         driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
         driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
         Wait.sleep(5000);
