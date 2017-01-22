@@ -36,8 +36,7 @@ public static String getDates(String xpathLink) {
 
     //method sets score for projected scores modo.
     public static String setScoreValueInBox(String subject, String sendValue){
-        WebElement targetBox = driver.findElement(By.cssSelector
-                ("#TargetScores_Subjects_1__Score"));
+        WebElement targetBox = driver.findElement(By.cssSelector("#TargetScores_Subjects_1__Score"));
       if(subject.equalsIgnoreCase("SAT_english")) {
 
 
@@ -72,7 +71,7 @@ public static void clickTestModo(){
 
 }
 
-public static void SchoolSelector() {
+public static void SchoolSelector(String schoolOne, String schooltwo) {
     //unable to find WebElements to directly remove schools
     driver.get("http://www.princetonreview.com");
     MainPage.signIn("sirkibble1988@gmail.com", "Blastingrod");
@@ -105,7 +104,7 @@ public static void SchoolSelector() {
     driver.findElement(By.xpath("html/body/div[3]/div[3]/ul/li[2]/a")).click();
          driver.findElement(By.xpath(".//*[@id='schoolFilters']/div/a")).click();
     WebElement searchBox = driver.findElement(By.id("search"));
-    String schools[] = new String[]{"Yale", "Harvard"};
+    String schools[] = new String[]{schoolOne, schooltwo};
 
     searchBox.click();
         searchBox.clear();

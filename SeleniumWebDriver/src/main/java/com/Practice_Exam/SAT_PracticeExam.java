@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Kyle Alex on 1/19/2017.
  */
 public class SAT_PracticeExam extends SelDriver {
-
+     //method takes user to exam page
     public static void getToExam(){
 
         driver.findElement(By.linkText("Practice Tests")).click();
@@ -29,6 +29,8 @@ public class SAT_PracticeExam extends SelDriver {
 
 
     }
+    //Method Takes user to desired exam via index empty string sends user to default exam
+    //using A, B, C, D will take user to exam
     public static void pickExam(String testIndex){
         List<WebElement> test = driver.findElements(By.cssSelector(".fa.fa-desktop"));
 
@@ -45,7 +47,7 @@ public class SAT_PracticeExam extends SelDriver {
 
 
         }
-        else if(testIndex.equalsIgnoreCase("D")){
+        else if(testIndex.equalsIgnoreCase("C")){
 
             test.get(3).click();
 
@@ -66,8 +68,10 @@ public class SAT_PracticeExam extends SelDriver {
 
 }
 
+//Method takes user to exam based on length
 public static void setTestLength(String time){
-    WebElement optioBox = driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/select"));
+    Wait.waitForElementViability(By.cssSelector(".time-limit-multiplier.form-control"),20);
+    WebElement optioBox = driver.findElement(By.cssSelector(".time-limit-multiplier.form-control"));
     Wait.sleep(5000);
     Select option = new Select(optioBox);
 
@@ -75,7 +79,7 @@ public static void setTestLength(String time){
 
 
     option.selectByValue("1.5");
-    Wait.sleep(5000);
+    Wait.waitForElementViability(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button"),20);
     driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
     driver.findElement(By.xpath(".//*[@id='content-player']/div/div/div[2]/div/div/div[2]/div/button")).click();
     Wait.sleep(5000);}
@@ -119,7 +123,7 @@ public static void setTestLength(String time){
 
     }
 }
-
+    //Test exit exam and displays score in string
     public static void exitExamAndDisplayScore(){
 
         Wait.waitForElementViability(By.cssSelector(".btn.btn-sm.btn-default-eval.section-btn-end"),20);
@@ -133,31 +137,29 @@ public static void setTestLength(String time){
         System.out.println(score.getText());
 
     }
-
+    //Method displays loading of the PDF file as well as test slider manipulation
     public static void testPostExamFunctions(){
 
 
+       //web page needs 20-60 seconds to load the report or it will keep creating a dialog
+        //box saying it is not ready yet
         Wait.sleep(60000);
         driver.findElement(By.cssSelector(".fa.fa-file-pdf-o")).click();
-        //Wait.waitForElementViability(By.cssSelector(".close"),20);
-        //driver.findElement(By.cssSelector(".close")).click();
-        //Wait.waitForElementViability(By.cssSelector(".btn.btn-default.btn-sm.btn-scorereport-dl"),20);
-        //Wait.sleep(5000);
-        //driver.findElement(By.xpath(".//*[@id='tpr-practice']/div[1]/div[2]/div[2]/div/div[1]/span/a")).click();
         Wait.sleep(1000);
         Switch_Windows.windowSwitch(1);
+        Wait.waitForElementViability(By.id("pageContainer1"),20);
         Assert.assertTrue(driver.findElement(By.id("pageContainer1")).isDisplayed());
         Switch_Windows.windowSwitch(0);
         Wait.waitForElementViability(By.linkText("SAT Math"),20);
         driver.findElement(By.linkText("SAT Math")).click();
         Assert.assertTrue(driver.findElement(By.id("area-math")).getText().contains("Math") );
-        Wait.sleep(5000);
+        Wait.waitForElementViability(By.linkText("SAT Verbal"),20);
         driver.findElement(By.linkText("SAT Verbal")).click();
         Assert.assertTrue(driver.findElement(By.id("area-verbal")).getText().contains("Verbal") );
-        Wait.sleep(5000);
+        Wait.waitForElementViability(By.linkText("SAT Essay"),20);
         driver.findElement(By.linkText("SAT Essay")).click();
         Assert.assertTrue(driver.findElement(By.id("area-essay")).getText().contains("Essay") );
-        Wait.sleep(5000);
+
 
 
 

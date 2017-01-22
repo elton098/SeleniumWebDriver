@@ -1,2 +1,2 @@
-ie
+Firefox
 www.princetonreview.com
