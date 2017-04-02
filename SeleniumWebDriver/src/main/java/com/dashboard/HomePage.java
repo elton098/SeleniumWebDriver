@@ -9,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import util.Switch_Windows;
 import util.Wait;
-import java.util.List;
-import java.util.MissingResourceException;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -24,7 +22,7 @@ public static String getDates(String xpathLink) {
     WebElement dateConfirm = driver.findElement(By.cssSelector(".form-control.userDetail"));
 
         driver.findElement(By.cssSelector(".fa.fa-calendar")).click();
-        Wait.waitForElementViability(By.xpath(xpathLink),5);
+        Wait.waitForElementVisibility(By.xpath(xpathLink),5);
         driver.findElement(By.xpath(xpathLink)).click();
 
 
@@ -66,7 +64,7 @@ public static String getDates(String xpathLink) {
 //method clicks modo for scores
 public static void clickTestModo(){
     driver.findElement(By.linkText("Target Scores")).click();
-    Wait.waitForElementViability(By.cssSelector("#TargetScores_Subjects_0__Score"), 5);
+    Wait.waitForElementVisibility(By.cssSelector("#TargetScores_Subjects_0__Score"), 5);
 
 
 }
@@ -87,14 +85,14 @@ public static void SchoolSelector(String schoolOne, String schooltwo) {
                   driver.findElement(By.xpath((".//*[@id='tpr-schools']/tbody/tr[1]/td/div/div[2]/h5/a"))).click();
                   driver.findElement(By.xpath(".//*[@id='tpr-schools']/tbody/tr[2]/td/div/div[2]/h5/a")).click();
                Switch_Windows.windowSwitch(1);
-               Wait.waitForElementViability(By.xpath(".//*[@id='tpr-schools']/div[5]/div/div[1]/div[2]/div[2]/ul/li/button"), 10);
+               Wait.waitForElementVisibility(By.xpath(".//*[@id='tpr-schools']/div[5]/div/div[1]/div[2]/div[2]/ul/li/button"), 10);
                driver.findElement(By.xpath(".//*[@id='tpr-schools']/div[5]/div/div[1]/div[2]/div[2]/ul/li/button")).click();
-               Wait.waitForElementViability(By.cssSelector(".btn.btn-sm.btn-primary.btn-block.modalConfirm-ok"), 10);
+               Wait.waitForElementVisibility(By.cssSelector(".btn.btn-sm.btn-primary.btn-block.modalConfirm-ok"), 10);
                driver.findElement(By.cssSelector(".btn.btn-sm.btn-primary.btn-block.modalConfirm-ok")).click();
                Switch_Windows.windowSwitch(2);
-               Wait.waitForElementViability(By.cssSelector(".saveMultiItemButton.btn.btn-block.btn-saved"), 10);
+               Wait.waitForElementVisibility(By.cssSelector(".saveMultiItemButton.btn.btn-block.btn-saved"), 10);
                driver.findElement(By.cssSelector(".saveMultiItemButton.btn.btn-block.btn-saved")).click();
-               Wait.waitForElementViability(By.cssSelector(".btn.btn-sm.btn-primary.btn-block.modalConfirm-ok"), 20);
+               Wait.waitForElementVisibility(By.cssSelector(".btn.btn-sm.btn-primary.btn-block.modalConfirm-ok"), 20);
                driver.findElement(By.cssSelector(".btn.btn-sm.btn-primary.btn-block.modalConfirm-ok")).click();
                Switch_Windows.windowSwitch(0);
                driver.findElement(By.linkText("Target Schools")).click();

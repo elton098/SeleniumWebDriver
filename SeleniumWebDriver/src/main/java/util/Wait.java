@@ -23,11 +23,12 @@ public class Wait extends SelDriver {
         }
     }
 // waits for web element to be visible and sets wait time
-  public static void waitForElementViability(By Selection, int waitTimeSeconds ){
+  public static void waitForElementVisibility(By Selection, int waitTimeSeconds ){
 
      WebDriverWait wait = new WebDriverWait(driver,waitTimeSeconds);
 
       wait.until(ExpectedConditions.visibilityOfElementLocated(Selection));
+
 
   }
 }

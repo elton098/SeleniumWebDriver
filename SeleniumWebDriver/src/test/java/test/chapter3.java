@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import util.Wait;
 
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -52,7 +51,7 @@ public class chapter3 extends SelDriver {
     @Test
     public void alertDemo() {
         driver.get("http://toolsqa.com/handling-alerts-using-selenium-webdriver/");
-        Wait.waitForElementViability(By.cssSelector(".cp-info-bar-msg.cp_responsive>span"),5);
+        Wait.waitForElementVisibility(By.cssSelector(".cp-info-bar-msg.cp_responsive>span"),5);
         driver.findElement(By.cssSelector(".ib-img-default")).click();
         driver.findElement(By.cssSelector("#content>p>button")).click();
         driver.switchTo().alert().accept();
